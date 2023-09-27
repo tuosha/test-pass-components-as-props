@@ -1,0 +1,11 @@
+$main-color: blue;
+$border: 3px solid $main-color;
+
+.scss-box {
+  border: $border;
+  padding-top: 10px;
+}
+.scss-box h2 {
+  text-align: center;
+  color: $main-color
+}
