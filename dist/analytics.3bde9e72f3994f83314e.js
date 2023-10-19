@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[142],{866:function(){document.addEventListener("load",(()=>(()=>{const e=document.querySelector(".main-header");let n=0;e.addEventListener("click",(()=>{n++,console.log("Number of clicks:",n)}))})()))}},function(e){var n;n=866,e(e.s=n)}]);
