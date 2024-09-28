@@ -6,7 +6,7 @@ const isProd: boolean = !isDev
 const isEslint: boolean = process.env.NODE_ENV === 'eslint_mode'
 const isBundleAnalyzer: boolean = process.env.NODE_ENV === 'bundle_analyzer'
 const fileName = (ext: string): string => (isDev ? `[name].${ext}` : `[name][contenthash].${ext}`)
-const PORT: number = 3001
+const PORT: number = 3000
 const paths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     src: path.resolve(__dirname, 'src'),
