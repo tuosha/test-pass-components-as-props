@@ -1,4 +1,4 @@
-const Item = () => {
+const ItemList = () => {
     return (
         <div>
 
@@ -6,4 +6,4 @@ const Item = () => {
     );
 };
 
-export default Item;
+export default ItemList;
