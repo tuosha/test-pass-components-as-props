@@ -1,7 +1,18 @@
+import ItemList from '../Items/ItemList'
+import booksData from '../Data/booksData'
+import StateAsObject from '../StateAsObject/StateAsObject'
+import SetIntervalUseEffect from '../SetIntervalUseEffect/SetIntervalUseEffect'
+import ChangeDivColorByInput from '../ChangeDivColorByInput/ChangeDivColorByInput'
+import MainComponent from '../ChildrensAsProps/MainComponent'
+
 const App = () => {
     return (
         <div>
-            <h1>Webpack 5 - React - Eslint - Prettier - Sass - Less are ready to use</h1>
+            <ItemList data={booksData} />
+            <StateAsObject />
+            <SetIntervalUseEffect />
+            <ChangeDivColorByInput />
+            <MainComponent />
         </div>
     )
 }
