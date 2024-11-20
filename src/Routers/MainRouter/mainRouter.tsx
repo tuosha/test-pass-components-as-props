@@ -1,13 +1,7 @@
-import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import App from '../../App/App'
 import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
-import ItemList from '../../TestComponents/ItemList/ItemList'
 import booksData from '../../Data/booksData'
-import StateAsObject from '../../TestComponents/StateAsObject/StateAsObject'
-import SetIntervalUseEffect from '../../TestComponents/SetIntervalUseEffect/SetIntervalUseEffect'
-import ChangeDivColorByInput from '../../TestComponents/ChangeDivColorByInput/ChangeDivColorByInput'
-import MainComponent from '../../TestComponents/ChildrensAsProps/MainComponent'
 
 const mainRouter = createBrowserRouter([
     {
@@ -17,23 +11,52 @@ const mainRouter = createBrowserRouter([
         children: [
             {
                 path: '/item-list',
-                element: <ItemList data={booksData} />,
+                lazy: async () => {
+                    const ItemList = (await import('../../TestComponents/ItemList/ItemList')).default
+                    return {
+                        element: <ItemList data={booksData} />,
+                    }
+                },
             },
             {
                 path: '/state-as-object',
-                element: <StateAsObject />,
+                lazy: async () => {
+                    const StateAsObject = (await import('../../TestComponents/StateAsObject/StateAsObject')).default
+                    return {
+                        element: <StateAsObject />,
+                    }
+                },
             },
             {
                 path: '/set-interval-use-effect',
-                element: <SetIntervalUseEffect />,
+                lazy: async () => {
+                    const SetIntervalUseEffect = (
+                        await import('../../TestComponents/SetIntervalUseEffect/SetIntervalUseEffect')
+                    ).default
+                    return {
+                        element: <SetIntervalUseEffect />,
+                    }
+                },
             },
             {
                 path: '/change-div-color-by-input',
-                element: <ChangeDivColorByInput />,
+                lazy: async () => {
+                    const ChangeDivColorByInput = (
+                        await import('../../TestComponents/ChangeDivColorByInput/ChangeDivColorByInput')
+                    ).default
+                    return {
+                        element: <ChangeDivColorByInput />,
+                    }
+                },
             },
             {
                 path: '/children-as-props',
-                element: <MainComponent />,
+                lazy: async () => {
+                    const MainComponent = (await import('../../TestComponents/ChildrensAsProps/MainComponent')).default
+                    return {
+                        element: <MainComponent />,
+                    }
+                },
             },
         ],
     },
