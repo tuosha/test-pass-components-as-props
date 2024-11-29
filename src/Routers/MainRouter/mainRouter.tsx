@@ -2,6 +2,10 @@ import { createBrowserRouter } from 'react-router-dom'
 import App from '../../App/App'
 import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
 import booksData from '../../Data/booksData'
+import Loadable from '../../LazyComponentLoading/Loadable'
+import LazyComponentLoading from '../../LazyComponentLoading/LazyComponentLoading'
+
+const LazyElem = Loadable(LazyComponentLoading)
 
 const mainRouter = createBrowserRouter([
     {
@@ -57,6 +61,10 @@ const mainRouter = createBrowserRouter([
                         element: <MainComponent />,
                     }
                 },
+            },
+            {
+                path: '/lazy-loading',
+                element: <LazyElem />,
             },
         ],
     },
