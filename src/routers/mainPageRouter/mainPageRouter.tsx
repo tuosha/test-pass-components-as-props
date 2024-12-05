@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom'
-import App from '../../App/App'
-import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
-import booksData from '../../Data/booksData'
-import Loadable from '../../LazyComponentLoading/Loadable'
-import LazyComponentLoading from '../../LazyComponentLoading/LazyComponentLoading'
+import App from '../../components/App/App'
+import booksData from '../../components/Data/booksData'
+import Loadable from '../../components/LazyComponentLoading/Loadable'
+import LazyComponentLoading from '../../components/LazyComponentLoading/LazyComponentLoading'
+import RouterErrorPage from '../RouterErrorPage/RouterErrorPage';
 
 const LazyElem = Loadable(LazyComponentLoading)
 
-const mainRouter = createBrowserRouter([
+const mainPageRouter = createBrowserRouter([
     {
         path: '/',
         element: <App />,
@@ -16,7 +16,7 @@ const mainRouter = createBrowserRouter([
             {
                 path: '/item-list',
                 lazy: async () => {
-                    const ItemList = (await import('../../TestComponents/ItemList/ItemList')).default
+                    const ItemList = (await import('../../components/ItemList/ItemList')).default
                     return {
                         element: <ItemList data={booksData} />,
                     }
@@ -25,7 +25,7 @@ const mainRouter = createBrowserRouter([
             {
                 path: '/state-as-object',
                 lazy: async () => {
-                    const StateAsObject = (await import('../../TestComponents/StateAsObject/StateAsObject')).default
+                    const StateAsObject = (await import('../../components/StateAsObject/StateAsObject')).default
                     return {
                         element: <StateAsObject />,
                     }
@@ -35,7 +35,7 @@ const mainRouter = createBrowserRouter([
                 path: '/set-interval-use-effect',
                 lazy: async () => {
                     const SetIntervalUseEffect = (
-                        await import('../../TestComponents/SetIntervalUseEffect/SetIntervalUseEffect')
+                        await import('../../components/SetIntervalUseEffect/SetIntervalUseEffect')
                     ).default
                     return {
                         element: <SetIntervalUseEffect />,
@@ -46,7 +46,7 @@ const mainRouter = createBrowserRouter([
                 path: '/change-div-color-by-input',
                 lazy: async () => {
                     const ChangeDivColorByInput = (
-                        await import('../../TestComponents/ChangeDivColorByInput/ChangeDivColorByInput')
+                        await import('../../components/ChangeDivColorByInput/ChangeDivColorByInput')
                     ).default
                     return {
                         element: <ChangeDivColorByInput />,
@@ -56,7 +56,7 @@ const mainRouter = createBrowserRouter([
             {
                 path: '/children-as-props',
                 lazy: async () => {
-                    const MainComponent = (await import('../../TestComponents/ChildrensAsProps/MainComponent')).default
+                    const MainComponent = (await import('../../components/ChildrensAsProps/MainComponent')).default
                     return {
                         element: <MainComponent />,
                     }
@@ -70,4 +70,4 @@ const mainRouter = createBrowserRouter([
     },
 ])
 
-export default mainRouter
+export default mainPageRouter

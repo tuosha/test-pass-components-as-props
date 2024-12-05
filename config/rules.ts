@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
-const rules = () => {
+const rules = (isDev: boolean) => {
     const baseRulesSet: webpack.RuleSetRule[] = [
         {
             test: /\.tsx?$/,
@@ -9,21 +9,21 @@ const rules = () => {
             exclude: /node_modules/,
         },
         {
-            test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-            type: 'asset/resource',
-            exclude: /node_modules/,
+            test: /\.css$/i,
+            use: cssLoader('', isDev),
         },
         {
-            test: /\.css$/,
-            use: cssLoaders(''),
+            test: /\.s[ac]ss$/i,
+            use: cssLoader('sass-loader', isDev),
         },
         {
             test: /\.less$/,
-            use: cssLoaders('less-loader'),
+            use: cssLoader('less-loader', isDev),
         },
         {
-            test: /\.s[ac]ss$/,
-            use: cssLoaders('sass-loader'),
+            test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+            type: 'asset/resource',
+            exclude: /node_modules/,
         },
         {
             test: /\.(png|jpe?g|gif|svg|webp|ico)$/,
@@ -37,8 +37,20 @@ const rules = () => {
     return baseRulesSet
 }
 
-const cssLoaders = (loader: string) => {
-    const loaders = [MiniCssExtractPlugin.loader, 'css-loader']
+const cssLoader = (loader: string, isDev: boolean) => {
+    const loaders = [
+        isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+        {
+            loader: 'css-loader',
+            options: {
+                modules: {
+                    auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                    namedExport: false,
+                    localIdentName: isDev ? '[path][name]__[local]-[hash:base64:5]' : '[hash:base64:8]',
+                },
+            },
+        },
+    ]
     if (loader) {
         loaders.push(loader)
     }

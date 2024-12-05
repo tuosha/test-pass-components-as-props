@@ -1,9 +1,10 @@
 import { Link, Outlet } from 'react-router-dom'
-import './App.css'
+import classes from './App.module.scss'
+import '../../styles/index.scss'
 
 const App = () => {
     return (
-        <div className='app--router__link'>
+        <div className={`${classes.appRouter} app`}>
             <Link to={'/item-list'}>Item List</Link>
             <Link to={'/set-interval-use-effect'}>Set Interval with useEffect</Link>
             <Link to={'/state-as-object'}>State as object</Link>
