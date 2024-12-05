@@ -1,6 +1,6 @@
 import { createRoot, Root } from 'react-dom/client'
 import React, { StrictMode } from 'react'
-import AppRouter from './Routers/AppRouter'
+import AppRouter from './routers/AppRouter'
 
 const root: Root = createRoot(document.getElementById('root'))
 
