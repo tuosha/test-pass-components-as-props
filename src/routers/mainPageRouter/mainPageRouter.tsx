@@ -3,7 +3,7 @@ import App from '../../components/App/App'
 import booksData from '../../components/Data/booksData'
 import Loadable from '../../components/LazyComponentLoading/Loadable'
 import LazyComponentLoading from '../../components/LazyComponentLoading/LazyComponentLoading'
-import RouterErrorPage from '../RouterErrorPage/RouterErrorPage';
+import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
 
 const LazyElem = Loadable(LazyComponentLoading)
 
