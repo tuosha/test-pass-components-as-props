@@ -4,6 +4,7 @@ import booksData from '../../components/Data/booksData'
 import Loadable from '../../components/LazyComponentLoading/Loadable'
 import LazyComponentLoading from '../../components/LazyComponentLoading/LazyComponentLoading'
 import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
+import UseEffectAndLayoutHooks from '../../components/useHooks/useEffectAndLayoutHooks/useEffectAndLayoutHooks'
 
 const LazyElem = Loadable(LazyComponentLoading)
 
@@ -65,6 +66,10 @@ const mainPageRouter = createBrowserRouter([
             {
                 path: '/lazy-loading',
                 element: <LazyElem />,
+            },
+            {
+                path: '/use-effect-use-layout',
+                element: <UseEffectAndLayoutHooks />,
             },
         ],
     },

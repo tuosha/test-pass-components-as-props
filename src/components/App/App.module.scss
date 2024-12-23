@@ -1,3 +1,9 @@
-.app-router a {
-	margin-right: 10px;
+.app {
+  display: flex;
+  width: 100%
+}
+
+.app-content {
+  display: flex;
+  margin-left: 15px;
 }
