@@ -5,6 +5,7 @@ import Loadable from '../../components/LazyComponentLoading/Loadable'
 import LazyComponentLoading from '../../components/LazyComponentLoading/LazyComponentLoading'
 import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
 import UseEffectAndLayoutHooks from '../../components/useHooks/useEffectAndLayoutHooks/useEffectAndLayoutHooks'
+import ClosureTimeout from '../../components/ClosureTimeout/ClosureTimeout';
 
 const LazyElem = Loadable(LazyComponentLoading)
 
@@ -70,6 +71,10 @@ const mainPageRouter = createBrowserRouter([
             {
                 path: '/use-effect-use-layout',
                 element: <UseEffectAndLayoutHooks />,
+            },
+            {
+                path: '/closure-timeout',
+                element: <ClosureTimeout />,
             },
         ],
     },
