@@ -16,6 +16,7 @@ const Navbar = ({ className }: NavbarProps) => {
             <Link to={'/children-as-props'}>Children as props</Link>
             <Link to={'/lazy-loading'}>Lazy loading</Link>
             <Link to={'/use-effect-use-layout'}>useEffect & useLayout</Link>
+            <Link to={'/closure-timeout'}>Closure in Timeout</Link>
         </div>
     )
 }
