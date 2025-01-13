@@ -1,16 +1,21 @@
 import { Outlet } from 'react-router-dom'
 import cls from './App.module.scss'
 import '../../styles/index.scss'
-import Nabvar from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar'
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
+import { ErrorButton } from '../ErrorBoundary/ui/ErrorButton'
 
 const App = () => {
     return (
-        <div className={`${cls.app} app`}>
-            <Nabvar />
-            <div className={cls.appContent}>
-                <Outlet />
+        <ErrorBoundary>
+            <ErrorButton />
+            <div className={`${cls.app} app`}>
+                <Navbar />
+                <div className={cls.appContent}>
+                    <Outlet />
+                </div>
             </div>
-        </div>
+        </ErrorBoundary>
     )
 }
 

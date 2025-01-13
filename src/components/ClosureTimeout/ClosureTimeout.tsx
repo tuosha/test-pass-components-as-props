@@ -11,9 +11,7 @@ const ClosureTimeout = () => {
         <div className={cls.closure}>
             <h3>Closure in timeout</h3>
             <span className={cls.counter}>{clicks}</span>
-            <button onClick={onClick}>
-                click
-            </button>
+            <button onClick={onClick}>click</button>
         </div>
     )
 }
