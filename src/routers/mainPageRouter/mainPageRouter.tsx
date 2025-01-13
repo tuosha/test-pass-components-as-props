@@ -5,7 +5,7 @@ import Loadable from '../../components/LazyComponentLoading/Loadable'
 import LazyComponentLoading from '../../components/LazyComponentLoading/LazyComponentLoading'
 import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
 import UseEffectAndLayoutHooks from '../../components/useHooks/useEffectAndLayoutHooks/useEffectAndLayoutHooks'
-import ClosureTimeout from '../../components/ClosureTimeout/ClosureTimeout';
+import ClosureTimeout from '../../components/ClosureTimeout/ClosureTimeout'
 
 const LazyElem = Loadable(LazyComponentLoading)
 
