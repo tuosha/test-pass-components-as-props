@@ -17,6 +17,7 @@ const Navbar = ({ className }: NavbarProps) => {
             <Link to={'/lazy-loading'}>Lazy loading</Link>
             <Link to={'/use-effect-use-layout'}>useEffect & useLayout</Link>
             <Link to={'/closure-timeout'}>Closure in Timeout</Link>
+            <Link to={'/test-redux-cash'}>Test Redux</Link>
         </div>
     )
 }

@@ -1,11 +1,14 @@
 import { createRoot, Root } from 'react-dom/client'
-import React, { StrictMode } from 'react'
+import { StrictMode } from 'react'
 import AppRouter from './routers/AppRouter'
+import { StoreProvider } from './components/TestRedux/store/provider/StoreProvider';
 
 const root: Root = createRoot(document.getElementById('root'))
 
 root.render(
     <StrictMode>
-        <AppRouter />
+        <StoreProvider>
+            <AppRouter />
+        </StoreProvider>
     </StrictMode>,
 )

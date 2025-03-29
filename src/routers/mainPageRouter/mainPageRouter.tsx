@@ -6,6 +6,7 @@ import LazyComponentLoading from '../../components/LazyComponentLoading/LazyComp
 import RouterErrorPage from '../RouterErrorPage/RouterErrorPage'
 import UseEffectAndLayoutHooks from '../../components/useHooks/useEffectAndLayoutHooks/useEffectAndLayoutHooks'
 import ClosureTimeout from '../../components/ClosureTimeout/ClosureTimeout'
+import TestRedux from '../../components/TestRedux/TestRedux'
 
 const LazyElem = Loadable(LazyComponentLoading)
 
@@ -75,6 +76,10 @@ const mainPageRouter = createBrowserRouter([
             {
                 path: '/closure-timeout',
                 element: <ClosureTimeout />,
+            },
+            {
+                path: '/test-redux-cash',
+                element: <TestRedux />,
             },
         ],
     },
