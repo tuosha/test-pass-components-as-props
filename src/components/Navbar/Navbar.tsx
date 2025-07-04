@@ -18,6 +18,7 @@ const Navbar = ({ className }: NavbarProps) => {
             <Link to={'/use-effect-use-layout'}>useEffect & useLayout</Link>
             <Link to={'/closure-timeout'}>Closure in Timeout</Link>
             <Link to={'/test-redux-cash'}>Test Redux</Link>
+            <Link to={'/test-typescript'}>Test Typescript</Link>
         </div>
     )
 }
