@@ -19,6 +19,8 @@ const Navbar = ({ className }: NavbarProps) => {
             <Link to={'/closure-timeout'}>Closure in Timeout</Link>
             <Link to={'/test-redux-cash'}>Test Redux</Link>
             <Link to={'/test-typescript'}>Test Typescript</Link>
+            <Link to={'/optimize-rerenders'}>Optimize Rerenders</Link>
+
         </div>
     )
 }
