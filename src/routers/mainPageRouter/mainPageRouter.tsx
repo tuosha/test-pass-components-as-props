@@ -8,6 +8,7 @@ import UseEffectAndLayoutHooks from '../../components/useHooks/useEffectAndLayou
 import ClosureTimeout from '../../components/ClosureTimeout/ClosureTimeout'
 import TestRedux from '../../components/TestRedux/TestRedux'
 import UnionTypes from '../../components/TypeSript/UnionTypes';
+import OptimizeRerenders from '../../components/Optimiztation/OptimizeRerenders';
 
 const LazyElem = Loadable(LazyComponentLoading)
 
@@ -85,6 +86,10 @@ const mainPageRouter = createBrowserRouter([
             {
                 path: '/test-typescript',
                 element: <UnionTypes />,
+            },
+            {
+                path: '/optimize-rerenders',
+                element: <OptimizeRerenders />,
             },
         ],
     },
